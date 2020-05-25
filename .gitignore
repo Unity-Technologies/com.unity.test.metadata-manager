@@ -1,0 +1,8 @@
+test-compilation-project/
+.Editor/
+.vscode/
+.bin/
+.download/
+utr.bat
+run-tests.bat
+build/
