@@ -22,6 +22,7 @@ namespace com.unity.test.metadatamanager
             var keyValuePairs = new[]
             {
                 new KeyValuePair<string, string>("username", settings.Username),
+                new KeyValuePair<string, string>("burstenabled", settings.EnableBurst.ToString()),
                 new KeyValuePair<string, string>("PackageUnderTestName", settings.PackageUnderTestName),
                 new KeyValuePair<string, string>("PackageUnderTestVersion", settings.PackageUnderTestVersion),
                 new KeyValuePair<string, string>("PackageUnderTestRevision", settings.PackageUnderTestRevision),
