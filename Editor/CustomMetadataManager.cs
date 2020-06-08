@@ -33,6 +33,8 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("testsrev", settings.TestsRevision),
                 new KeyValuePair<string, string>("testsrevdate", settings.TestsRevisionDate),
                 new KeyValuePair<string, string>("dependencies", string.Join(",", dependencies))
+				new KeyValuePair<string, string>("MtRendering", string.Join(",", settings.MtRendering.ToString())),
+                new KeyValuePair<string, string>("GraphicsJobs", string.Join(",", settings.GraphicsJobs.ToString()))
             };
             AppendMetadata(keyValuePairs);
             return metadata.Remove(0,1).ToString();
