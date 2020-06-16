@@ -37,6 +37,7 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("GraphicsJobs", string.Join(",", settings.GraphicsJobs.ToString())),
                 new KeyValuePair<string, string>("joblink", string.Join(",", settings.JobLink)),
                 new KeyValuePair<string, string>("jobworkercount", string.Join(",", settings.JobWorkerCount)),
+                new KeyValuePair<string, string>("initiallogmemorybufferbytes", string.Join(",", settings.InitialLogMemoryBufferCapacity))
             };
             AppendMetadata(keyValuePairs);
             return metadata.Remove(0, 1).ToString();
