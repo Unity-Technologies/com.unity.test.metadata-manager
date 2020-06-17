@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using com.unity.test.performance.runtimesettings;
 using UnityEngine;
@@ -9,6 +11,7 @@ namespace com.unity.test.metadatamanager
     {
         private readonly StringBuilder metadata = new StringBuilder();
         private readonly List<string> dependencies;
+        public static string MetadataFileName = "metadata.txt";
 
         public CustomMetadataManager(List<string> dependencies)
         {
@@ -36,11 +39,28 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("MtRendering", string.Join(",", settings.MtRendering.ToString())),
                 new KeyValuePair<string, string>("GraphicsJobs", string.Join(",", settings.GraphicsJobs.ToString())),
                 new KeyValuePair<string, string>("joblink", string.Join(",", settings.JobLink)),
-                new KeyValuePair<string, string>("jobworkercount", string.Join(",", settings.JobWorkerCount)),
-                new KeyValuePair<string, string>("initiallogmemorybufferbytes", string.Join(",", settings.InitialLogMemoryBufferCapacity))
-            };
+                new KeyValuePair<string, string>("jobworkercount", string.Join(",", settings.JobWorkerCount)),            };
             AppendMetadata(keyValuePairs);
+
+            ReadAndAppendCustomMetadataFromFile();
+
             return metadata.Remove(0, 1).ToString();
+        }
+
+        private void ReadAndAppendCustomMetadataFromFile()
+        {
+            var tempFilePath = Path.Combine(Directory.GetCurrentDirectory(), MetadataFileName);
+            if (File.Exists(tempFilePath))
+            {
+                using (StreamReader sr = new StreamReader(tempFilePath))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        metadata.Append(line);
+                    }
+                }
+            }
         }
 
         private void AppendMetadata(IEnumerable<KeyValuePair<string, string>> keyValuePairs)
