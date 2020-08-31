@@ -39,7 +39,12 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("MtRendering", string.Join(",", settings.MtRendering.ToString())),
                 new KeyValuePair<string, string>("GraphicsJobs", string.Join(",", settings.GraphicsJobs.ToString())),
                 new KeyValuePair<string, string>("joblink", string.Join(",", settings.JobLink)),
-                new KeyValuePair<string, string>("jobworkercount", string.Join(",", settings.JobWorkerCount)),            };
+                new KeyValuePair<string, string>("jobworkercount", string.Join(",", settings.JobWorkerCount)),
+                new KeyValuePair<string, string>("apicompatibilitylevel", string.Join(",", settings.ApiCompatibilityLevel)),
+                new KeyValuePair<string, string>("stripenginecode", string.Join(",", settings.StripEngineCode)),
+                new KeyValuePair<string, string>("managedstrippinglevel", string.Join(",", settings.ManagedStrippingLevel)),
+                new KeyValuePair<string, string>("scriptdebugging", string.Join(",", settings.ScriptDebugging)),
+            };
             AppendMetadata(keyValuePairs);
 
             ReadAndAppendCustomMetadataFromFile();
