@@ -6,3 +6,5 @@ test-compilation-project/
 utr.bat
 run-tests.bat
 build/
+.yamato/.DS_Store
+.DS_Store

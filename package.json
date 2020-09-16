@@ -3,5 +3,5 @@
   "displayName": "Unity Tests Metadata Manager",
   "version": "0.1.0-preview",
   "unity": "2018.1",
-  "description": "Used to manage metadata for Unity tests."
+  "description": "Used to manage custom metadata for Unity performance tests."
 }

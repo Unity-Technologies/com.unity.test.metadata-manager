@@ -4,7 +4,9 @@
     "references": [
         "com.unity.tests.performance.runtimesettings"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
