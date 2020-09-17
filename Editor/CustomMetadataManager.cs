@@ -26,11 +26,11 @@ namespace com.unity.test.metadatamanager
             {
                 new KeyValuePair<string, string>("username", settings.Username),
                 new KeyValuePair<string, string>("burstenabled", settings.EnableBurst.ToString()),
-                new KeyValuePair<string, string>("PackageUnderTestName", settings.PackageUnderTestName),
+                new KeyValuePair<string, string>("packageundertestname", settings.PackageUnderTestName),
                 new KeyValuePair<string, string>("PackageUnderTestVersion", settings.PackageUnderTestVersion),
                 new KeyValuePair<string, string>("PackageUnderTestRevision", settings.PackageUnderTestRevision),
                 new KeyValuePair<string, string>("PackageUnderTestRevisionDate", settings.PackageUnderTestRevisionDate),
-                new KeyValuePair<string, string>("PackageUnderTestPackageBranch", settings.PackageUnderTestPackageBranch),
+                new KeyValuePair<string, string>("PackageUnderTestBranch", settings.PackageUnderTestBranch),
                 new KeyValuePair<string, string>("renderpipeline", settings.RenderPipeline),
                 new KeyValuePair<string, string>("testsbranch", settings.TestsBranch),
                 new KeyValuePair<string, string>("testsrev", settings.TestsRevision),
@@ -44,6 +44,19 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("stripenginecode", string.Join(",", settings.StripEngineCode)),
                 new KeyValuePair<string, string>("managedstrippinglevel", string.Join(",", settings.ManagedStrippingLevel)),
                 new KeyValuePair<string, string>("scriptdebugging", string.Join(",", settings.ScriptDebugging)),
+                new KeyValuePair<string, string>("testprojectname", settings.TestProjectName),
+                new KeyValuePair<string, string>("testprojectrevision", settings.TestProjectRevision),
+                new KeyValuePair<string, string>("testprojectrevdate", settings.TestProjectRevisionDate),
+                new KeyValuePair<string, string>("testprojectbranch", settings.TestProjectBranch),
+                new KeyValuePair<string, string>("enabledxrtarget", settings.EnabledXrTarget),
+                new KeyValuePair<string, string>("stereorenderingmode", settings.StereoRenderingMode),
+                new KeyValuePair<string, string>("StereoRenderingModeDesktop", settings.StereoRenderingModeDesktop),
+                new KeyValuePair<string, string>("StereoRenderingModeAndroid", settings.StereoRenderingModeAndroid),
+                new KeyValuePair<string, string>("SimulationMode", settings.SimulationMode),
+                new KeyValuePair<string, string>("PluginVersion", settings.PluginVersion),
+                new KeyValuePair<string, string>("DeviceRuntimeVersion", settings.DeviceRuntimeVersion),
+                new KeyValuePair<string, string>("FfrLevel", settings.FfrLevel),
+                new KeyValuePair<string, string>("androidtargetarchitecture", settings.AndroidTargetArchitecture),
             };
             AppendMetadata(keyValuePairs);
 
