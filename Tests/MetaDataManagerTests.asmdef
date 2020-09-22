@@ -1,20 +1,22 @@
 {
-    "name": "com.unity.test.metadata-manager",
+    "name": "MetaDataManagerTests",
     "rootNamespace": "",
     "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
         "com.unity.tests.performance.runtimesettings"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
         "nunit.framework.dll"
     ],
-    "autoReferenced": true,
-    "defineConstraints": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }

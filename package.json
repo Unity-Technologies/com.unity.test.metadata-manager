@@ -2,6 +2,9 @@
   "name": "com.unity.test.metadata-manager",
   "displayName": "Unity Tests Metadata Manager",
   "version": "0.1.0-preview",
-  "unity": "2018.1",
-  "description": "Used to manage metadata for Unity tests."
+  "unity": "2019.4",
+  "description": "Used to manage custom metadata for Unity performance tests.",
+  "dependencies": {
+    "com.unity.test.performance.runtimesettings": "0.1.0-preview"
+  }
 }
