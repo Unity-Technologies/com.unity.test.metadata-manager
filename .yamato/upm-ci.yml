@@ -1,7 +1,7 @@
 editors:
   - version: trunk
   - version: 2020.1
-  - version: 2019.3
+  - version: 2019.4
 platforms:
   - name: Windows64
     os: windows
