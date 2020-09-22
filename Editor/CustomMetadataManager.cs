@@ -30,7 +30,7 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("PackageUnderTestVersion", settings.PackageUnderTestVersion),
                 new KeyValuePair<string, string>("PackageUnderTestRevision", settings.PackageUnderTestRevision),
                 new KeyValuePair<string, string>("PackageUnderTestRevisionDate", settings.PackageUnderTestRevisionDate),
-                new KeyValuePair<string, string>("PackageUnderTestPackageBranch", settings.PackageUnderTestPackageBranch),
+                new KeyValuePair<string, string>("PackageUnderTestBranch", settings.PackageUnderTestBranch),
                 new KeyValuePair<string, string>("renderpipeline", settings.RenderPipeline),
                 new KeyValuePair<string, string>("testsbranch", settings.TestsBranch),
                 new KeyValuePair<string, string>("testsrev", settings.TestsRevision),
