@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using com.unity.test.performance.runtimesettings;
+using NUnit.Framework;
 using UnityEngine;
 
 namespace com.unity.test.metadatamanager
@@ -22,11 +24,11 @@ namespace com.unity.test.metadatamanager
         {
             var settings = Resources.Load<CurrentSettings>("settings");
 
-            var keyValuePairs = new[]
+            var customMetaData = new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("username", settings.Username),
                 new KeyValuePair<string, string>("burstenabled", settings.EnableBurst.ToString()),
-                new KeyValuePair<string, string>("PackageUnderTestName", settings.PackageUnderTestName),
+                new KeyValuePair<string, string>("packageundertestname", settings.PackageUnderTestName),
                 new KeyValuePair<string, string>("PackageUnderTestVersion", settings.PackageUnderTestVersion),
                 new KeyValuePair<string, string>("PackageUnderTestRevision", settings.PackageUnderTestRevision),
                 new KeyValuePair<string, string>("PackageUnderTestRevisionDate", settings.PackageUnderTestRevisionDate),
@@ -44,12 +46,44 @@ namespace com.unity.test.metadatamanager
                 new KeyValuePair<string, string>("stripenginecode", string.Join(",", settings.StripEngineCode)),
                 new KeyValuePair<string, string>("managedstrippinglevel", string.Join(",", settings.ManagedStrippingLevel)),
                 new KeyValuePair<string, string>("scriptdebugging", string.Join(",", settings.ScriptDebugging)),
+                new KeyValuePair<string, string>("testprojectname", settings.TestProjectName),
+                new KeyValuePair<string, string>("testprojectrevision", settings.TestProjectRevision),
+                new KeyValuePair<string, string>("testprojectrevdate", settings.TestProjectRevisionDate),
+                new KeyValuePair<string, string>("testprojectbranch", settings.TestProjectBranch),
+                new KeyValuePair<string, string>("enabledxrtarget", settings.EnabledXrTarget),
+                new KeyValuePair<string, string>("stereorenderingmode", settings.StereoRenderingMode),
+                new KeyValuePair<string, string>("StereoRenderingModeDesktop", settings.StereoRenderingModeDesktop),
+                new KeyValuePair<string, string>("StereoRenderingModeAndroid", settings.StereoRenderingModeAndroid),
+                new KeyValuePair<string, string>("SimulationMode", settings.SimulationMode),
+                new KeyValuePair<string, string>("PluginVersion", settings.PluginVersion),
+                new KeyValuePair<string, string>("DeviceRuntimeVersion", settings.DeviceRuntimeVersion),
+                new KeyValuePair<string, string>("FfrLevel", settings.FfrLevel),
+                new KeyValuePair<string, string>("androidtargetarchitecture", settings.AndroidTargetArchitecture),
             };
-            AppendMetadata(keyValuePairs);
+
+            UpdateMetadataWithMatchesInTestContext(customMetaData);
+
+            AppendMetadata(customMetaData);
 
             ReadAndAppendCustomMetadataFromFile();
 
             return metadata.Remove(0, 1).ToString();
+        }
+
+        private static void UpdateMetadataWithMatchesInTestContext(List<KeyValuePair<string, string>> customMetaData)
+        {
+            var tempMetaDataList = new List<KeyValuePair<string, string>>();
+            tempMetaDataList.AddRange(customMetaData);
+
+            foreach (var metadata in tempMetaDataList)
+            {
+                if (TestContext.CurrentContext.Test.Properties.Keys.Any(k => k.Contains(metadata.Key)))
+                {
+                    var metadataFromPropertyBag = (string)TestContext.CurrentContext.Test.Properties.Get(metadata.Key);
+                    customMetaData.Remove(metadata);
+                    customMetaData.Add(new KeyValuePair<string, string>(metadata.Key, metadataFromPropertyBag));
+                }
+            }
         }
 
         private void ReadAndAppendCustomMetadataFromFile()
