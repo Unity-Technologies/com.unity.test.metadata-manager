@@ -11,7 +11,7 @@
     "precompiledReferences": [
         "nunit.framework.dll"
     ],
-    "autoReferenced": false,
+    "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
