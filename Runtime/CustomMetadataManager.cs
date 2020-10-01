@@ -26,6 +26,7 @@ namespace com.unity.test.metadatamanager
 
             var customMetaData = new List<KeyValuePair<string, string>>()
             {
+                new KeyValuePair<string, string>("projectname", settings.ProjectName),
                 new KeyValuePair<string, string>("username", settings.Username),
                 new KeyValuePair<string, string>("burstenabled", settings.EnableBurst.ToString()),
                 new KeyValuePair<string, string>("packageundertestname", settings.PackageUnderTestName),
