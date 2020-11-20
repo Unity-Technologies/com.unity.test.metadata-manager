@@ -98,6 +98,8 @@ namespace com.unity.test.metadatamanager
                     new KeyValuePair<string, string>("MtRendering", string.Join(",", Instance.MtRendering.ToString())),
                     new KeyValuePair<string, string>("GraphicsJobs",
                         string.Join(",", Instance.GraphicsJobs.ToString())),
+                    new KeyValuePair<string, string>("PlayerGraphicsApi",
+                        string.Join(",", Instance.PlayerGraphicsApi)),
                     new KeyValuePair<string, string>("joblink", string.Join(",", Instance.JobLink)),
                     new KeyValuePair<string, string>("jobworkercount", string.Join(",", Instance.JobWorkerCount)),
                     new KeyValuePair<string, string>("apicompatibilitylevel",
