@@ -1,14 +1,14 @@
 {
     "name": "com.unity.test.metadata-manager",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "com.unity.ext.nunit"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [
-        "nunit.framework.dll"
-    ],
+    "overrideReferences": false,
+    "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
