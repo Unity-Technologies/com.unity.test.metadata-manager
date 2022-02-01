@@ -77,4 +77,6 @@ public class CurrentSettings : ScriptableObject
     public string UrpPaCascade4Split;
     public float UrpShadowDepthBias;
     public float UrpShadowNormalBias;
+    public string XrInputActionsFile;
+    public string XrInputDeviceInfoFile;
 }
