@@ -180,7 +180,9 @@ namespace com.unity.test.metadatamanager
                     new KeyValuePair<string, string>("UrpShadowDepthBias",
                         Instance.UrpShadowDepthBias.ToString(CultureInfo.InvariantCulture)),
                     new KeyValuePair<string, string>("UrpShadowNormalBias",
-                        Instance.UrpShadowNormalBias.ToString(CultureInfo.InvariantCulture))
+                        Instance.UrpShadowNormalBias.ToString(CultureInfo.InvariantCulture)),
+                    new KeyValuePair<string, string>("XrInputActionsFile", Instance.XrInputActionsFile),
+                    new KeyValuePair<string, string>("XrInputDeviceInfoFile", Instance.XrInputDeviceInfoFile)
                 };
 
                 UpdateMetadataWithMatchesInTestContext(customMetaData);
