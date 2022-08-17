@@ -3,7 +3,9 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+#if NUNIT_AVAILABLE
 using NUnit.Framework;
+#endif
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -51,7 +53,6 @@ namespace com.unity.test.metadatamanager
 
             if (settings == null)
             {
-                //Debug.Log("sean: settings is null after loading CurrentSettings from Resources");
 #if UNITY_EDITOR
                 settings = ScriptableObject.CreateInstance<CurrentSettings>();
 
@@ -76,7 +77,7 @@ namespace com.unity.test.metadatamanager
         public string GetCustomMetadata()
         {
             var metaDatastring = string.Empty;
-            //Debug.Log(Instance != null ? "sean: Instance is not null" : "sean: Instance is null");
+
             if (Instance != null)
             {
                 var customMetaData = new List<KeyValuePair<string, string>>
@@ -193,7 +194,7 @@ namespace com.unity.test.metadatamanager
 
                 metaDatastring = metadata.Remove(0, 1).ToString();
             }
-            //Debug.Log(string.Format("sean: metadata string is {0}", metaDatastring));
+
             return metaDatastring;
         }
 
@@ -204,12 +205,14 @@ namespace com.unity.test.metadatamanager
 
             foreach (var metadata in tempMetaDataList)
             {
+#if NUNIT_AVAILABLE
                 if (TestContext.CurrentContext.Test.Properties.Keys.Any(k => k.Contains(metadata.Key)))
                 {
                     var metadataFromPropertyBag = (string) TestContext.CurrentContext.Test.Properties.Get(metadata.Key);
                     customMetaData.Remove(metadata);
                     customMetaData.Add(new KeyValuePair<string, string>(metadata.Key, metadataFromPropertyBag));
                 }
+#endif
             }
         }
 

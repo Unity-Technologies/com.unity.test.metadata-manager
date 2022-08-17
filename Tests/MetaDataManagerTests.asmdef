@@ -1,21 +1,29 @@
 {
-    "name": "MetaDataManagerTests",
+    "name": "com.unity.test.metadata-manager.tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "com.unity.tests.performance.runtimesettings",
-        "com.unity.ext.nunit"
+        "com.unity.test.metadata-manager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "Moq.dll"
+    ],
     "autoReferenced": false,
     "defineConstraints": [
         "UNITY_INCLUDE_TESTS"
     ],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+          "name": "nuget.moq",
+          "expression": "1.0.0",
+          "define": "NUGET_MOQ_AVAILABLE"
+        }
+    ],
     "noEngineReferences": false
 }

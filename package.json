@@ -1,12 +1,11 @@
 {
   "name": "com.unity.test.metadata-manager",
   "displayName": "Unity Tests Metadata Manager",
-  "version": "0.1.6-preview",
-  "unity": "2019.4",
+  "version": "0.2.0-preview",
+  "unity": "2020.3",
   "description": "Used to manage custom metadata for Unity performance tests.",
   "dependencies": {
-        "com.unity.ext.nunit": "2.0.0",
-        "com.unity.test-framework": "1.1.0",
-        "com.unity.nuget.newtonsoft-json": "2.0.0-preview"
-    }
+    "com.unity.nuget.newtonsoft-json": "2.0.0-preview",
+    "com.unity.ext.nunit": "1.0.0"
+  }
 }

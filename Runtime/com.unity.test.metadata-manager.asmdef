@@ -1,16 +1,22 @@
 {
     "name": "com.unity.test.metadata-manager",
     "rootNamespace": "",
-    "references": [
-        "com.unity.ext.nunit"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.ext.nunit",
+            "expression": "1.0.0",
+            "define": "NUNIT_AVAILABLE"
+        }
+    ],
     "noEngineReferences": false
 }
