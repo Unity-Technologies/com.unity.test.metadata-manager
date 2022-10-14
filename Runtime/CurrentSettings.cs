@@ -79,4 +79,5 @@ public class CurrentSettings : ScriptableObject
     public float UrpShadowNormalBias;
     public string XrInputActionsFile;
     public string XrInputDeviceInfoFile;
+    public string OpenXRFeatures;
 }
