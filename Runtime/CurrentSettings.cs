@@ -38,6 +38,7 @@ public class CurrentSettings : ScriptableObject
     public string PluginVersion;
     public string DeviceRuntimeVersion;
     public string FfrLevel;
+    public bool FoveatedRendering;
     public string AndroidTargetArchitecture;
     public string QualityLevel;
     public float LodBias;
