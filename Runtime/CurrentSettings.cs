@@ -81,4 +81,5 @@ public class CurrentSettings : ScriptableObject
     public string XrInputActionsFile;
     public string XrInputDeviceInfoFile;
     public string OpenXRFeatures;
+    public string RunDeviceAlias;
 }
